@@ -1,0 +1,14 @@
+#files
+.classpath
+.project
+*.log
+**/.idea/workspace.xml
+**/.idea/tasks.xml
+**/.idea/encodings.xml
+
+#folders
+.settings/
+bin/
+target/
+.idea/
+
