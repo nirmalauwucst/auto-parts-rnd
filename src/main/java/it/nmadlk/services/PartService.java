@@ -11,7 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import it.nmadlk.models.Part;
-import it.nmadlk.repository.PartRepository;
+import it.nmadlk.repositories.PartRepository;
 
 /**
  * @author Navo
