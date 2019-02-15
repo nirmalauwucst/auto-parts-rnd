@@ -3,15 +3,19 @@
  */
 package it.nmadlk.models;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import org.springframework.data.elasticsearch.annotations.Document;
+
+import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  * @author Navo
  *
  */
 @Entity
-public class Vehicle {
+@Document(indexName = "vehicle-ap", type = "vehicles")
+public class Vehicle implements Serializable {
+
 	@Id
 	private String id;
 	private String make;
@@ -24,8 +28,7 @@ public class Vehicle {
 	public Vehicle() {
 		
 	}
-	
-	
+
 	public Vehicle(String id, String make, String model, String trimLevel, String modelYear, String targetMarket) {
 		super();
 		this.id = id;

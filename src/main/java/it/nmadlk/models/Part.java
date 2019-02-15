@@ -3,11 +3,10 @@
  */
 package it.nmadlk.models;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import org.springframework.data.elasticsearch.annotations.Document;
+
+import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  * @author Navo
@@ -15,8 +14,9 @@ import javax.persistence.ManyToOne;
  */
 
 @Entity
-public class Part {
-	
+@Document(indexName = "part-ap", type = "parts")
+public class Part implements Serializable {
+
 	@Id
 	private String id;
 	private String partName;
@@ -25,7 +25,7 @@ public class Part {
 	private String description;
 	
 	 //(Inspiration!) Many parts for One vehicle
-	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	private Vehicle vehicle;
 	
 	
