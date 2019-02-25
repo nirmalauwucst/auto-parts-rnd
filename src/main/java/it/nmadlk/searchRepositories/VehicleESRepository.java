@@ -12,4 +12,6 @@ import java.util.List;
 public interface VehicleESRepository extends ElasticsearchRepository<Vehicle, String> {
 
     List<Vehicle> findByMake(String make);
+
+    List<Vehicle> findByModel(String model);
 }

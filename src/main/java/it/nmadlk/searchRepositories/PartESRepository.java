@@ -12,5 +12,5 @@ import java.util.List;
  */
 public interface PartESRepository extends ElasticsearchRepository<Part, String> {
 
-    List<Part> findByVehicle_Make(String vehicleMake);
+
 }
